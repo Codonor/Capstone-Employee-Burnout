@@ -1,1 +1,34 @@
 Capstone Employee Burnout
+
+Feature Colunms and descriptions:
+ - *`employee_id`*: Unique synthetic identifier
+- *`role`*: Job title (300+ varieties)
+- *`job_level`*: Entry | Mid | Senior | Manager | Lead
+- *`department`*: Business unit (38 departments)
+- *`tenure_months`*: Time with company (1-357 months)
+- *`salary`*: Annual USD ($27K-$3384K range)
+- *`performance_score`*: Normalized 0-1 rating
+- *`satisfaction_score`*: Employee happiness (0-1)
+- *`workload_score`*: Workload burden indicator
+- *`team_sentiment`*: Team morale (0-1)
+- *`recent_feedback`*: Employee's anonymous assessment of company
+- *`communication_patterns`*: Persona-based style
+- *`project_completion_rate`*: Delivery success metric
+- *`overtime_hours`*: Extra hours logged (0-74 range)
+- *`training_participation`*: L&D engagement
+- *`collaboration_score`*: Teamwork rating
+- *`technical_skills`*: Array of tech skills (4-9 per employee)
+- *`soft_skills`*: Array of soft skills (3-7 per employee)
+- *`email_sentiment`*: Email tone analysis
+- *`slack_activity`*: Chat platform usage
+- *`meeting_participation`*: Meeting engagement
+- *`goal_achievement_rate`*: Objective completion
+- *`stress_level`*: Stress assessment (0-1)
+- *`burnout_risk`*: Burnout probability (0-1)
+- *`left_company`*: Boolean exit flag
+- *`turnover_reason`*: Exit category (if applicable)
+- *`risk_factors_summary`*: Low | Medium | High | Severe risk
+- *`turnover_probability_generated`**: ML-predicted churn risk
+- *`persona_name`*: Type of employee 
+- *`role_complexity_score`*: Job difficulty rating
+- *`career_progression_score`*: Growth trajectory
