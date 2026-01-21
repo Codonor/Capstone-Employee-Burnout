@@ -28,10 +28,11 @@ Include context and the business or research problem.
 ---
 
 ## Motivation / Problem Statement
-- Why you chose this project  
-- The problem you are solving and why it matters  
-- Optional: potential impact if implemented in real life
+- With a background in Psychology, I am interested in factors that drive human behaviour, and how it can improve life in the work place, as well as employment outcomes.
 
+- A consultancy has been engaged by multiple organisations to analyse anonymised employee-level data. The dataset contains role information, compensation, engagement and behavioural scores, and employment outcomes (e.g. whether an employee left the company).
+
+- The objective is to use data analytics to identify factors associated with employee burnout and employee turnover, and to surface insights that can inform organisational interventions aimed at improving retention and employee wellbeing.
 ---
 
 ## Dataset
