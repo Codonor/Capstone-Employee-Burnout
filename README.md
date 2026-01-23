@@ -14,6 +14,7 @@ This repository contains a data analysis and modelling project that explores dri
 - [File Structure](#file-structure)
 - [How to Run](#how-to-run)
 - [Ethics, GDPR and Governance](#ethics-gdpr-and-governance)
+- [Project Management](#project-management)
 - [Use of AI Tools](#use-of-ai-tools)
 - [Reflections, Learning and Development](#reflections-learning-and-development)
 - [Reproducibility](#reproducibility)
@@ -111,7 +112,10 @@ streamlit run app.py
 - Although the dataset is synthetic, the project considers real-world risks including bias, fairness, and data privacy. In real organisational settings, such analysis would require GDPR-compliant data handling, transparency in automated decision-making, and safeguards against discriminatory outcomes.
 
 --- 
+## Project Management
+- Trello was used to manage the project with 3 lists: To Do, In Progress, Done [Trello](https://trello.com/b/MspgDgyj/employee-burnout)
 
+---
 ## Use of AI Tools
 - ChatGPT and CoPilot were used for ideation, writing code sections and summarising findings. 
 - All generated code was manually checked and modified
@@ -125,13 +129,7 @@ streamlit run app.py
 - A Streamlit app was developed to surface results. Cloud deployment was attempted; however, due to environment constraints, the app is intended to be run locally.
 - With more time it would be advisable to complete further feature engineering and tune a ML model to achieve a higher level of recall with fewer false positives.
 - Continued experience will lead to faster and more efficient problem solving, allowing more time for analysis & modelling.
-
----
-
-## Next Steps
-- Add unit tests for data-processing functions.
-- Persist model artifacts and add an inference script.
-- Add an interactive dashboard with filtering by department / role.
+- I wanted to run a textual analysis on the recent feedback column, but unfortunately didn't have time 
 
 ---
 
