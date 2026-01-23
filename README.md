@@ -16,7 +16,6 @@ This repository contains a data analysis and modelling project that explores dri
 - [Ethics, GDPR and Governance](#ethics-gdpr-and-governance)
 - [Use of AI Tools](#use-of-ai-tools)
 - [Reflections, Learning and Development](#reflections-learning-and-development)
-- [Next Steps](#next-steps)
 - [Reproducibility](#reproducibility)
 - [Contributing](#contributing)
 - [License](#license)
@@ -70,7 +69,7 @@ Clone the repository and set up a Python virtual environment.
 - `notebooks/notebook1_Sampling.ipynb` — sampling and initial dataset exploration
 - `notebooks/notebook2_feature_inspection_and_cleaning.ipynb` — cleaning, missing-value strategy, type fixes, EDA
 - `notebooks/notebook3_Feature_relationships_and_modelling.ipynb` — feature relationships, modelling and evaluation
-- `app.py` — small app (Streamlit/Flask) to surface selected visualizations and model outputs.
+- `app.py` — small Streamlit app to surface selected visualizations and model outputs.
 
 ---
 
@@ -109,13 +108,25 @@ streamlit run app.py
 ---
 
 ## Ethics, GDPR and Governance
+- Although the dataset is synthetic, the project considers real-world risks including bias, fairness, and data privacy. In real organisational settings, such analysis would require GDPR-compliant data handling, transparency in automated decision-making, and safeguards against discriminatory outcomes.
 
+--- 
 
 ## Use of AI Tools
+- ChatGPT and CoPilot were used for ideation, writing code sections and summarising findings. 
+- All generated code was manually checked and modified
 
+---
 
 ## Reflections, Learning and Development
+- Work on the project was slow to begin with as I ran into issues with the large size original JSON which I committed to git, which caused problems with the version control as it was too large. Finding a solution to this took more time than expected.
+- Further problems involved slow processing times using the full dataset, which I then decided to subset to a more workable sampled_data csv which became the working data.
+- As I'd used tableau for dashboarding in previous projects, I hadn't used Streamlit before which lead to time consuming issues in creating the dashboard.
+- A Streamlit app was developed to surface results. Cloud deployment was attempted; however, due to environment constraints, the app is intended to be run locally.
+- With more time it would be advisable to complete further feature engineering and tune a ML model to achieve a higher level of recall with fewer false positives.
+- Continued experience will lead to faster and more efficient problem solving, allowing more time for analysis & modelling.
 
+---
 
 ## Next Steps
 - Add unit tests for data-processing functions.
@@ -139,11 +150,6 @@ Use the included `requirements.txt` to create a matching environment.
 ## Contributing
 - Contributions are welcome. Open an issue to discuss major changes or create a branch and a pull request for smaller fixes.
 - Add tests for any new data-processing functions and document new dependencies in `requirements.txt`.
-
----
-
-## License
-This project is provided under the MIT License — see the `LICENSE` file for details.
 
 ---
 
