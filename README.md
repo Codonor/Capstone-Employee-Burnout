@@ -46,7 +46,7 @@ Clone the repository and set up a Python virtual environment.
    source .venv/bin/activate
 
 3. Install dependencies
-   pip install -r requirements.txt
+   pip install -r requirements_dev.txt
 
 4. VS Code
    Open the project in VS Code and select the `.venv` interpreter:
@@ -84,7 +84,7 @@ Clone the repository and set up a Python virtual environment.
 - `app.py`: lightweight app to view results and visualizations
 - `notebooks/`: analysis notebooks (see above)
 - `data/`: raw and cleaned CSVs (`data_cleaned.csv`, `sampled_data.csv`)
-- `requirements.txt`: Python dependencies
+- `requirements_dev.txt`: Python dependencies
 
 ---
 
@@ -138,7 +138,7 @@ streamlit run app.py
 ## Reproducibility
 
 Recommended Python version: 3.11+.
-Use the included `requirements.txt` to create a matching environment.
+Use the included `requirements_dev.txt` to create a matching environment.
 
 - Notebooks set a random seed where required (seed = 42). If you re-run experiments, set the same seed to reproduce results.
 - Notebook run order: `notebooks/notebook1_Sampling.ipynb` → `notebooks/notebook2_feature_inspection_and_cleaning.ipynb` → `notebooks/notebook3_Feature_relationships_and_modelling.ipynb`.
@@ -149,7 +149,7 @@ Use the included `requirements.txt` to create a matching environment.
 
 ## Contributing
 - Contributions are welcome. Open an issue to discuss major changes or create a branch and a pull request for smaller fixes.
-- Add tests for any new data-processing functions and document new dependencies in `requirements.txt`.
+- Add tests for any new data-processing functions and document new dependencies in `requirements_dev.txt`.
 
 ---
 
