@@ -1,5 +1,5 @@
 
-# Employee Burnout & Turnover — Capstone Project
+# Employee Burnout & Turnover - Capstone Project
 
 This repository contains a data analysis and modelling project that explores drivers of employee burnout and turnover using a synthetic employee dataset. The goal is to identify signals associated with higher burnout and exit risk, and to produce interpretable recommendations for reducing turnover.
 
