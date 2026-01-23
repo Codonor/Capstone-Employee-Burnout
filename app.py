@@ -1,4 +1,4 @@
-# streamlit_app.py
+﻿# streamlit_app.py
 # --------------------------------------------------
 # Purpose: Summarise EDA, statistics, and ML findings
 # --------------------------------------------------
@@ -215,7 +215,7 @@ st.markdown("""
 
 The model is good at identifying employees who are genuinely at risk of leaving, successfully flagging around 6 out of 10 employees who do leave.
 
-To achieve this, the model takes a cautious approach and flags more people as “at risk” than will actually leave. This means some employees are highlighted who would have stayed anyway.
+To achieve this, the model takes a cautious approach and flags more people as â€œat riskâ€ than will actually leave. This means some employees are highlighted who would have stayed anyway.
 
 In an HR context, this trade-off is often acceptable: it is usually better to start supportive conversations early than to miss employees who are at real risk of leaving. However, the results should be used as a decision-support tool, not a definitive prediction about individual employees.
 """)
@@ -239,7 +239,7 @@ fig = px.bar(
     title="Feature importance from Random Forest"
 )
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width="stretch")
 
 # -----------------------------
 # Section 7: Ethics & governance
@@ -252,5 +252,3 @@ st.markdown("""
 - Predictions should **support**, not replace, human decision-making
 - GDPR principles such as transparency and fairness must be considered
 """)
-
-
