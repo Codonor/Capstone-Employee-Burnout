@@ -249,23 +249,4 @@ st.markdown("""
 - GDPR principles such as transparency and fairness must be considered
 """)
 
-# -----------------------------
-# Section 8: AI usage & reflection
-# -----------------------------
-st.header("8. Use of AI tools & reflection")
 
-st.markdown("""
-AI tools were used to:
-- Assist with code structuring
-- Debug errors
-- Generate explanations of results
-
-Challenges included:
-- Class imbalance
-- Interpreting model performance beyond accuracy
-
-With more time, future work could include:
-- More advanced models
-- Real-world validation
-- Continuous model monitoring
-""")

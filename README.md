@@ -1,108 +1,156 @@
-# Project Title
-*Concise but descriptive.*  
-Example: **Customer Churn Analysis for Subscription Services**
+
+# Employee Burnout & Turnover — Capstone Project
+
+This repository contains a data analysis and modelling project that explores drivers of employee burnout and turnover using a synthetic employee dataset. The goal is to identify signals associated with higher burnout and exit risk, and to produce interpretable recommendations for reducing turnover.
 
 ---
 
 ## Table of Contents
-- [Overview](#overview-summary)
-- [Motivation](#motivation-problem-statement)
+- [Overview](#overview)
+- [Quick Start](#quick-start)
 - [Dataset](#dataset)
-- [Methods](#methods-approach)
-- [Results](#results)
-- [Conclusion](#conclusion-recommendations)
-- [Installation / Usage](#installation--usage)
+- [Notebooks & Code](#notebooks--code)
+- [Results Summary](#results-summary)
 - [File Structure](#file-structure)
-- [References](#references-resources)
+- [How to Run](#how-to-run)
+- [Ethics, GDPR and Governance](#ethics-gdpr-and-governance)
+- [Use of AI Tools](#use-of-ai-tools)
+- [Reflections, Learning and Development](#reflections-learning-and-development)
+- [Next Steps](#next-steps)
+- [Reproducibility](#reproducibility)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ---
 
-## Overview / Summary
-*2–4 sentences about what the project does.*  
-Include context and the business or research problem.  
-
-> Example:  
-> This project analyzes subscription customer data to predict churn.  
-> The goal is to identify key factors that cause customers to leave and to provide actionable recommendations to reduce churn.
+## Overview
+This project performs data cleaning, exploratory analysis, feature engineering and supervised modelling to predict burnout risk and employee exits. It produces visualizations and a set of notebooks that document the analysis pipeline and findings.
 
 ---
+## Quick Start
 
-## Motivation / Problem Statement
-- With a background in Psychology, I am interested in factors that drive human behaviour, and how it can improve life in the work place, as well as employment outcomes.
+Clone the repository and set up a Python virtual environment.
 
-- A consultancy has been engaged by multiple organisations to analyse anonymised employee-level data. The dataset contains role information, compensation, engagement and behavioural scores, and employment outcomes (e.g. whether an employee left the company).
+1. Clone the repo
+   git clone <repo_url>
+   cd Capstone
 
-- The objective is to use data analytics to identify factors associated with employee burnout and employee turnover, and to surface insights that can inform organisational interventions aimed at improving retention and employee wellbeing.
+2. Create and activate a virtual environment
+
+   Windows:
+   python -m venv .venv
+   .venv\Scripts\activate
+
+   macOS / Linux:
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+3. Install dependencies
+   pip install -r requirements.txt
+
+4. VS Code
+   Open the project in VS Code and select the `.venv` interpreter:
+   Command Palette → Python: Select Interpreter
+
+5. Run
+   Open notebooks in the `notebooks/` folder or run `app.py`.
+
 ---
 
 ## Dataset
-- Source of the data (public dataset, company dataset, etc.)  
-- Feature Colunms and descriptions:
-- *`employee_id`*: Unique synthetic identifier
-- *`role`*: Job title (300+ varieties)
-- *`job_level`*: Entry | Mid | Senior | Manager | Lead
-- *`department`*: Business unit (38 departments)
-- *`tenure_months`*: Time with company (1-357 months)
-- *`salary`*: Annual USD ($27K-$3384K range)
-- *`performance_score`*: Normalized 0-1 rating
-- *`satisfaction_score`*: Employee happiness (0-1)
-- *`workload_score`*: Workload burden indicator
-- *`team_sentiment`*: Team morale (0-1)
-- *`recent_feedback`*: Employee's anonymous assessment of company
-- *`communication_patterns`*: Persona-based style
-- *`project_completion_rate`*: Delivery success metric
-- *`overtime_hours`*: Extra hours logged (0-74 range)
-- *`training_participation`*: L&D engagement
-- *`collaboration_score`*: Teamwork rating
-- *`technical_skills`*: Array of tech skills (4-9 per employee)
-- *`soft_skills`*: Array of soft skills (3-7 per employee)
-- *`email_sentiment`*: Email tone analysis
-- *`slack_activity`*: Chat platform usage
-- *`meeting_participation`*: Meeting engagement
-- *`goal_achievement_rate`*: Objective completion
-- *`stress_level`*: Stress assessment (0-1)
-- *`burnout_risk`*: Burnout probability (0-1)
-- *`left_company`*: Boolean exit flag
-- *`turnover_reason`*: Exit category (if applicable)
-- *`risk_factors_summary`*: Low | Medium | High | Severe risk
-- *`turnover_probability_generated`**: ML-predicted churn risk
-- *`persona_name`*: Type of employee 
-- *`role_complexity_score`*: Job difficulty rating
-- *`career_progression_score`*: Growth trajectory  
-- Any preprocessing done or data limitations
+- The project uses a synthetic employee dataset downloaded from kaggle, included in the `data/` folder: `synthetic-employee-dataset-raw`. The dataset proved too large to be managed on my system with 850,000 rows, thus it was randomly sampled to 100,000 rows and saved as `sampled_data.csv`, see `notebooks/notebook1_Sampling.ipynb`.
+- Data is synthetic but designed to resemble real employee records: role, department, tenure, compensation, engagement/performance scores, work patterns, and exit flags.
+- Key columns (high level): `employee_id`, `role`, `job_level`, `department`, `tenure_months`, `salary`, `performance_score`, `satisfaction_score`, `workload_score`, `team_sentiment`, `overtime_hours`, `training_participation`, `stress_level`, `burnout_risk`, `left_company`.
+- See `notebooks/notebook2_feature_inspection_and_cleaning.ipynb` for preprocessing steps and data quality notes after which `data_cleaned.csv` was produced and used for all downstream analyses.
 
 ---
 
-## Methods / Approach
-- **Data Cleaning:** Handling missing values, outliers, etc.  
-- **Exploratory Data Analysis (EDA):** Key visualizations or insights  
-- **Feature Engineering:** Any derived variables  
-- **Modeling / Analysis:** Algorithms or techniques used  
-- **Evaluation Metrics:** How success was measured (accuracy, RMSE, R², etc.)
-
-*Keep it concise; no need to include full code here.*
+## Notebooks & Code
+- `notebooks/notebook1_Sampling.ipynb` — sampling and initial dataset exploration
+- `notebooks/notebook2_feature_inspection_and_cleaning.ipynb` — cleaning, missing-value strategy, type fixes, EDA
+- `notebooks/notebook3_Feature_relationships_and_modelling.ipynb` — feature relationships, modelling and evaluation
+- `app.py` — small app (Streamlit/Flask) to surface selected visualizations and model outputs.
 
 ---
 
-## Results
-- Key findings in simple, readable terms  
-- Include graphs, tables, or summary statistics  
-- Highlight actionable insights if applicable
+## Results Summary
+- Models and analysis consistently show that `stress_level`, `burnout_risk`,`satisfaction_score`, and `team_sentiment` are among the strongest signals associated with elevated exit probability.
+- Feature importance and partial dependence plots are produced in Notebook 3; inspect them to see effect directions and thresholds.
+- Actionable recommendations include, improving team-level morale interventions, monitoring and reducing stress levels, and targeted re-skilling / career-path support for high-risk groups.
 
 ---
 
-## Conclusion / Recommendations
-- Summarize what you learned  
-- Suggest next steps or improvements
+## File Structure
+- `app.py`: lightweight app to view results and visualizations
+- `notebooks/`: analysis notebooks (see above)
+- `data/`: raw and cleaned CSVs (`data_cleaned.csv`, `sampled_data.csv`)
+- `requirements.txt`: Python dependencies
 
 ---
 
-## Installation / Usage
-Steps to run the code/notebooks:  
+## How to Run
+- Run the notebooks (Jupyter or VS Code):
 
 ```bash
-git clone <repo_url>
-cd project-folder
-pip install -r requirements.txt
 jupyter notebook
+```
+
+- Or run the app (if using Streamlit):
+
+```bash
+streamlit run app.py
+```
+
+- To reproduce modelling results, open `notebooks/notebook3_Feature_relationships_and_modelling.ipynb` and run cells in order. The notebook documents package versions where relevant.
+
+---
+
+---
+
+## Ethics, GDPR and Governance
+
+
+## Use of AI Tools
+
+
+## Reflections, Learning and Development
+
+
+## Next Steps
+- Add unit tests for data-processing functions.
+- Persist model artifacts and add an inference script.
+- Add an interactive dashboard with filtering by department / role.
+
+---
+
+## Reproducibility
+
+Recommended Python version: 3.11+.
+Use the included `requirements.txt` to create a matching environment.
+
+- Notebooks set a random seed where required (seed = 42). If you re-run experiments, set the same seed to reproduce results.
+- Notebook run order: `notebooks/notebook1_Sampling.ipynb` → `notebooks/notebook2_feature_inspection_and_cleaning.ipynb` → `notebooks/notebook3_Feature_relationships_and_modelling.ipynb`.
+
+- Version control was used through Git/GitHub, with regular commits for all stages of work such as cleaning, processesing and modelling.
+
+---
+
+## Contributing
+- Contributions are welcome. Open an issue to discuss major changes or create a branch and a pull request for smaller fixes.
+- Add tests for any new data-processing functions and document new dependencies in `requirements.txt`.
+
+---
+
+## License
+This project is provided under the MIT License — see the `LICENSE` file for details.
+
+---
+
+## Acknowledgements
+Project produced as part of the Code Institute Capstone. Data included in `data/` is synthetic.
+
+---
+
+**Author / Contact:** Conor O'Brien
 
