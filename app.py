@@ -156,10 +156,11 @@ st.markdown("""
 A **Random Forest classifier** was trained to predict whether an employee
 will leave the company.
 
-This model was chosen because it:
-- Captures non-linear relationships
-- Handles interactions between features
-- Performs well with mixed behavioural signals
+This model was chosen because:
+- Logistic Regression was ineffective 
+- It captures non-linear relationships
+- It handles interactions between features
+- It performs well with mixed behavioural signals
 """)
 
 # Define high-signal features
@@ -210,10 +211,13 @@ st.text("Classification report:")
 st.text(classification_report(y_test, y_pred))
 
 st.markdown("""
-**Interpretation:**
-After applying class weighting, the model substantially improves recall for employees who leave, identifying approximately 63% of leavers. This improvement comes at the cost of a high false positive rate, with many employees incorrectly flagged as at risk.
+### What this result means
 
-This highlights a common trade-off in real-world HR attrition modelling: increasing sensitivity to leavers often results in more false alarms, requiring careful consideration of decision thresholds and business impact.
+The model is good at identifying employees who are genuinely at risk of leaving, successfully flagging around 6 out of 10 employees who do leave.
+
+To achieve this, the model takes a cautious approach and flags more people as “at risk” than will actually leave. This means some employees are highlighted who would have stayed anyway.
+
+In an HR context, this trade-off is often acceptable: it is usually better to start supportive conversations early than to miss employees who are at real risk of leaving. However, the results should be used as a decision-support tool, not a definitive prediction about individual employees.
 """)
 
 # -----------------------------
